@@ -19,7 +19,29 @@ namespace TGS.Challenge
     {
       public int Find(int[] numbers)
       {
-        return -99;
-      }
-    }
+         int value = 0;
+
+          int min = numbers.Min();
+          int max = numbers.Max();
+          if (numbers.Length == 0) return value = -1;
+
+          if (min < 0 && max < 0) return value = 1;
+
+
+          List<int> range = Enumerable.Range(0, max).ToList();
+          List<int> current = numbers.ToList();
+
+          List<int> valid = range.Except(current).ToList();
+
+          if (valid.Count() == 0)
+          {
+              max++;
+              return value = max;
+          }
+          else
+          {
+              return value = valid.Min();
+          }
+        }
+     }
 }
