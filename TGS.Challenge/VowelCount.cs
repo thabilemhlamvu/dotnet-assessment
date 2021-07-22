@@ -15,8 +15,9 @@ namespace TGS.Challenge
     public class VowelCount
     {
         public int Count(string value)
-        {
-            return -1;
+        {   
+          List<Char> vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u' };
+          return value.ToLower().Count(x => vowels.Contains(x));
         }
     }
 }
