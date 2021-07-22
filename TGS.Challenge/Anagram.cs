@@ -24,7 +24,26 @@ namespace TGS.Challenge
     {
       public bool AreAnagrams(string word1, string word2)
       {
-        return false;
+        //string trimWord1 = word1.Trim();
+        //string trimWord2 = word2.Trim();
+        
+        char[]char1 = word1.ToLower().ToCharArray();
+        char[]char2 = word2.ToLower().ToCharArray();
+        
+        Array.Sort(char1);
+        Array.Sort(char2);
+        
+        string newWord1 = new string(char1);
+        string newWord2 = new string(char2);
+        
+        if(newWord1==newWord2)
+        {
+          return true;
+        }
+        else 
+        {
+          return false;
+        }
       }
     }
 }
