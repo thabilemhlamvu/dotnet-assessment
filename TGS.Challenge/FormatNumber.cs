@@ -26,7 +26,14 @@ namespace TGS.Challenge
     {
         public string Format(int value)
         {
-            return string.Empty;
+              string formatNumber="";
+              NumberFormatInfo number = new NumberFormatInfo();
+               for (int i = 0; i <= 7; i++)
+                {
+                    number.NumberNegativePattern = i;
+                    formatNumber = (value.ToString("N", number));                   
+                }
+                return formatNumber;
         }
     }
 }
